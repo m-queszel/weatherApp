@@ -1,3 +1,6 @@
-import { testFunction } from "./testing.js";
+import { getWeatherStatus } from "./WeatherStatus.js";
+import { getWeatherForLocation } from "./GetWeatherForLocation.js";
 
-testFunction();
+getWeatherStatus();
+
+
