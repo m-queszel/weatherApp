@@ -9,7 +9,20 @@
 
 <body>
 
-  <div class="mainContainer" id="mainContainer"></div>
+  <div class="mainContainer" id="mainContainer">
+    <form class="locationInput" id="locationInput">
+      <label for="city">City:</label><br>
+      <input type="text" id="city" name="city" autocomplete="address-level2"><br><br>
+
+      <label for="province">Province:</label><br>
+      <input type="text" id="province" name="province" autocomplete="address-level1"><br><br>
+
+      <input type="submit" value="Submit" id="submit">
+    </form>
+    <div class="subContainer" id="subContainer">
+      <span class="loader"></span>
+    </div>
+  </div>
 
 </body>
 

@@ -1,13 +1,14 @@
-export async function getWeatherStatus() {
-  const url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/NewBrunswick,Canada?key=J8C6GRZB8FUL99U8RYQN5GDRA"
+export async function getWeatherStatus(city, province) {
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city},${province},Canada?key=J8C6GRZB8FUL99U8RYQN5GDRA`
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      console.log("could not retrieve weather data");
+      console.log(`Could not retrieve weather data for ${province}, ${city}`);
+      return;
     }
 
     const result = await response.json();
-    processWeatherData(result);
+    return processWeatherData(result);
   }
   catch (error) {
     console.error(error.message);
@@ -20,7 +21,6 @@ function fahrenToCelsius(fahren) {
 
 function processWeatherData(jsonInfo) {
   let num = fahrenToCelsius(jsonInfo.currentConditions.temp);
-  let roundedNum = num.toFixed(1);
-  console.log(`It's currently ${roundedNum} degrees outside in Fredericton, NB`);
+  const roundedNum = num.toFixed(1);
+  return roundedNum;
 }
-

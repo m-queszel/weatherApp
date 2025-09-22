@@ -1,6 +1,6 @@
-import { getWeatherStatus } from "./WeatherStatus.js";
-import { getWeatherForLocation } from "./GetWeatherForLocation.js";
+import buttonHandler from "./buttonHandler.js";
+import initializeHomepage from "./Homepage.js";
+import "./styles.css";
 
-getWeatherStatus();
-
-
+initializeHomepage();
+buttonHandler();
